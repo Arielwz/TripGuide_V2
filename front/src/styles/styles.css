@@ -1,0 +1,22 @@
+body,
+col {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.card {
+  width: 21rem;
+}
+
+#card-display {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  font-size: x-large;
+}
+
+#credit-info {
+  font-size: 12px;
+}
