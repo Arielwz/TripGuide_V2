@@ -8,7 +8,7 @@ export default function RegistPage(props) {
   return (
     <div className="/regist">
       <div className="title">
-        <h3>Create New Account</h3>
+        <h1 style={{fontSize: "40px"}}>Create New Account</h1>
       </div>
       <div className="row">
         <div className="col-sm-4 box border">
