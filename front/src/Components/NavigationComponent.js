@@ -12,6 +12,7 @@ const Nav = function NavigationComponent(props) {
       <div className="container-fluid">
         <Link
           className="navbar-brand"
+          aria-label="Homepage"
           to="/"
           onClick={async (ev) => {
             ev.preventDefault();
@@ -39,6 +40,7 @@ const Nav = function NavigationComponent(props) {
                 className={
                   "nav-link" + (location.pathname === "/" ? " active" : "")
                 }
+                aria-label="View trips"
                 aria-current="page"
                 onClick={async (ev) => {
                   ev.preventDefault();
@@ -57,6 +59,8 @@ const Nav = function NavigationComponent(props) {
                   "nav-link" +
                   (location.pathname === "/upload" ? " active" : "")
                 }
+                aria-label="Upload"
+                aria-current="page"
                 to="/upload"
               >
                 Upload
@@ -64,7 +68,8 @@ const Nav = function NavigationComponent(props) {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/saved">
+              <Link className="nav-link" to="/saved" aria-label="My Favourite"
+                aria-current="page">
                 My Favourite
               </Link>
             </li>
@@ -72,22 +77,24 @@ const Nav = function NavigationComponent(props) {
 
           <SearchComponent onSearch={props.onSearch} />
 
-          <div
-            className="btn btn-success"
-            type="submit"
-            role="button"
-            style={{ marginLeft: "30px" }}
-            onClick={async (ev) => {
-              ev.preventDefault();
-              const { hasLogin, onLogout } = props;
-              if (hasLogin) {
-                onLogout && onLogout();
-              } else {
-                props.history.replace("/login");
-              }
-            }}
-          >
-            {props.hasLogin ? "Logout" : "Sign In"}
+          <div>
+            <button
+              className="btn btn-success"
+              type="submit"
+              style={{ marginLeft: "30px" }}
+              aria-label="Sign In/ Logout"
+              onClick={async (ev) => {
+                ev.preventDefault();
+                const { hasLogin, onLogout } = props;
+                if (hasLogin) {
+                  onLogout && onLogout();
+                } else {
+                  props.history.replace("/login");
+                }
+              }}
+            >
+              {props.hasLogin ? "Logout" : "Sign In"}
+            </button>
           </div>
         </div>
       </div>

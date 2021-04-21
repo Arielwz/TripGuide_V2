@@ -11,13 +11,14 @@ const SearchComponent = function SearchComponent(props) {
         className="form-control me-2"
         type="search"
         placeholder="Search"
-        aria-label="Search"
+        aria-label="Search Content"
         onChange={(ev) => {
           setSearchKey(ev.target.value);
         }}
       />
       <button
-        className="btn btn-outline-success"
+        className="btn btn-outline-light"
+        aria-label="Search"
         onClick={(ev) => {
           ev.preventDefault();
           props.onSearch && props.onSearch(searchKey);

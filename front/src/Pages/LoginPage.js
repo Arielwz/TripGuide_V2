@@ -10,7 +10,7 @@ const LoginPage = function LoginPage(props) {
   return (
     <div className="/login">
       <div className="title">
-        <h3>Sign in to upload posts:</h3>
+        <h1 style={{fontSize: "40px"}}>Sign in to upload posts:</h1>
       </div>
 
       <div className="row">
