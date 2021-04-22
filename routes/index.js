@@ -7,10 +7,14 @@ const myDB = require("../db/MyDB.js");
 router.post("/login", async (req, res) => {
   const userInfo = req.body;
 
-  const userRes = await myDB.searchUser({ username: userInfo.username  });
+  const userRes = await myDB.searchUser({ username: userInfo.username });
   console.log("user", userRes);
-  
-  if (userRes && userRes.length > 0 && bcrypt.compareSync(userInfo.password, userRes[0].password )) {
+
+  if (
+    userRes &&
+    userRes.length > 0 &&
+    bcrypt.compareSync(userInfo.password, userRes[0].password)
+  ) {
     req.session.userInfo = userInfo;
     return res.send({ success: true });
   }
@@ -27,11 +31,12 @@ router.post("/regist", async (req, res) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   const hashedUserInfo = {
     username: userInfo.username,
-    password: hashedPassword};
+    password: hashedPassword,
+  };
   const newUser = await myDB.creatUser(hashedUserInfo);
 
   if (newUser) {
-    req.session.userinfo = hashedUserInfo; 
+    req.session.userinfo = hashedUserInfo;
     return res.send({ success: true });
   }
 
@@ -86,7 +91,7 @@ router.get("/getTrips", async (req, res) => {
   const searchKey = req.query.searchKey;
   const page = +req.query.page || 0;
   const trips = await myDB.getTrips(page, {
-    name: { $regex: searchKey },
+    name: { $regex: searchKey, $options: "i" },
   });
   res.send({ trips, success: true });
 });
