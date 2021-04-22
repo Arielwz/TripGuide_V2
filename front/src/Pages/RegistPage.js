@@ -7,10 +7,10 @@ export default function RegistPage(props) {
   const [errorText, setErrorText] = useState("");
   return (
     <div className="/regist">
-      <div className="title">
-        <h1 style={{fontSize: "40px"}}>Create New Account</h1>
-      </div>
-      <div className="row">
+      <header className="title">
+        <h1 style={{ fontSize: "40px" }}>Create New Account</h1>
+      </header>
+      <main className="row">
         <div className="col-sm-4 box border">
           <form
             id="formRegist"
@@ -22,12 +22,12 @@ export default function RegistPage(props) {
               }
               setErrorText("");
               const response = await fetch("/regist", {
-                method: "POST", // *GET, POST, PUT, DELETE, etc.
-                credentials: "same-origin", // include, *same-origin, omit
+                method: "POST",
+                credentials: "same-origin",
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify(userInfo), // body data type must match "Content-Type" header
+                body: JSON.stringify(userInfo),
               });
               const res = await response.json();
               if (res && res.success) {
@@ -44,6 +44,7 @@ export default function RegistPage(props) {
               <input
                 type="text"
                 className="form-control"
+                aria-label="input username"
                 onChange={(ev) => {
                   setUserInfo({
                     ...userInfo,
@@ -59,6 +60,7 @@ export default function RegistPage(props) {
               <input
                 type="password"
                 className="form-control"
+                aria-label="input password"
                 onChange={(ev) => {
                   setUserInfo({
                     ...userInfo,
@@ -78,7 +80,11 @@ export default function RegistPage(props) {
               </div>
             )}
             <div className="d-grid gap-2 mx-auto center-font">
-              <button type="submit" className="btn btn-success">
+              <button
+                type="submit"
+                className="btn btn-success"
+                aria-label="sign up"
+              >
                 Sign Up
               </button>
             </div>
@@ -90,12 +96,13 @@ export default function RegistPage(props) {
               className="btn btn-primary secondfont"
               to="/login"
               role="button"
+              aria-label="sign in"
             >
               Sign In
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

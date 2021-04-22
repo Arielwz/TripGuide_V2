@@ -9,11 +9,11 @@ const LoginPage = function LoginPage(props) {
   const [errorText, setErrorText] = useState("");
   return (
     <div className="/login">
-      <div className="title">
-        <h1 style={{fontSize: "40px"}}>Sign in to upload posts:</h1>
-      </div>
+      <header className="title">
+        <h1 style={{ fontSize: "40px" }}>Sign in to upload posts:</h1>
+      </header>
 
-      <div className="row">
+      <main className="row">
         <div className="col-sm-4 box border">
           <form
             id="formLogin"
@@ -49,6 +49,7 @@ const LoginPage = function LoginPage(props) {
               <input
                 type="text"
                 className="form-control"
+                aria-label="input Username"
                 onChange={(ev) => {
                   setUserInfo({
                     ...userInfo,
@@ -64,6 +65,7 @@ const LoginPage = function LoginPage(props) {
               <input
                 type="password"
                 className="form-control"
+                aria-label="input Password"
                 onChange={(ev) => {
                   setUserInfo({
                     ...userInfo,
@@ -85,7 +87,7 @@ const LoginPage = function LoginPage(props) {
             )}
 
             <div className="d-grid gap-2 mx-auto center-font">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" aria-label="sign in">
                 Sign In
               </button>
             </div>
@@ -96,12 +98,13 @@ const LoginPage = function LoginPage(props) {
               className="btn btn-success secondfont"
               to="/regist"
               role="button"
+              aria-label="creat new account"
             >
               Creat New Account
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
