@@ -1,16 +1,18 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const bcrypt = require("bcrypt");
 const myDB = require("../db/MyDB.js");
 
 // login
 router.post("/login", async (req, res) => {
   const userInfo = req.body;
 
-  const userRes = await myDB.searchUser(userInfo);
-  if (userRes && userRes.length > 0) {
+  const userRes = await myDB.searchUser({ username: userInfo.username  });
+  console.log("user", userRes);
+  
+  if (userRes && userRes.length > 0 && bcrypt.compareSync(userInfo.password, userRes[0].password )) {
     req.session.userInfo = userInfo;
-    res.send({ success: true });
-    return;
+    return res.send({ success: true });
   }
   return res.send({ success: false, message: "Username or password error" });
 });
@@ -22,9 +24,14 @@ router.post("/regist", async (req, res) => {
   if (userRes && userRes.length > 0) {
     return res.send({ success: false, message: "Username already exists" });
   }
-  const newUser = await myDB.creatUser(userInfo);
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
+  const hashedUserInfo = {
+    username: userInfo.username,
+    password: hashedPassword};
+  const newUser = await myDB.creatUser(hashedUserInfo);
+
   if (newUser) {
-    req.session.userinfo = userInfo;
+    req.session.userinfo = hashedUserInfo; 
     return res.send({ success: true });
   }
 
@@ -39,12 +46,6 @@ router.get("/logout", async (req, res) => {
     }
     return res.send({ success: true });
   });
-});
-
-// get users
-router.get("/getUsers", async (req, res) => {
-  const users = await myDB.searchUser({ username: req.query.username });
-  res.send({ users });
 });
 
 // create trips

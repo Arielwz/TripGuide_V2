@@ -16,7 +16,7 @@ function MyDB() {
       console.log("Connected!");
       const res = await client
         .db(DB_NAME)
-        .collection("usersinfo")
+        .collection("hashedusersinfo")
         .insertOne(user);
       console.log("Inserted", res);
 
@@ -36,7 +36,7 @@ function MyDB() {
       await client.connect();
       console.log("Connected!");
       const db = client.db(DB_NAME);
-      const usersCol = db.collection("usersinfo");
+      const usersCol = db.collection("hashedusersinfo");
 
       console.log("Collection ready, querying with ", query);
       const users = await usersCol.find(query).toArray();
