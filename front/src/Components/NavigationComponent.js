@@ -22,17 +22,19 @@ const Nav = function NavigationComponent(props) {
         >
           Bay Area Trip Guide
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        <div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -68,14 +70,20 @@ const Nav = function NavigationComponent(props) {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/saved" aria-label="My Favourite"
-                aria-current="page">
+              <Link
+                className="nav-link"
+                to="/saved"
+                aria-label="My Favourite"
+                aria-current="page"
+              >
                 My Favourite
               </Link>
             </li>
           </ul>
 
-          <SearchComponent onSearch={props.onSearch} />
+          <div>
+            <SearchComponent onSearch={props.onSearch} />
+          </div>
 
           <div>
             <button

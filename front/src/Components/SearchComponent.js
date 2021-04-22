@@ -6,7 +6,7 @@ const SearchComponent = function SearchComponent(props) {
   const [searchKey, setSearchKey] = useState("");
 
   return (
-    <form className="d-flex">
+    <form className="d-flex" role ="search">
       <input
         className="form-control me-2"
         type="search"
