@@ -14,9 +14,9 @@ function Trip({ trip }) {
       <div className="card" id="card-info">
         <img className="card-img-top" src={trip.img} alt="trip" />
         <p className="card-title">{trip.name}</p>
-        <p>Location:{trip.location}</p>
-        <p>{trip.content}</p>
-        <p>Tags:{trip.tag}</p>
+        <p className="card-content">Location: {trip.location}</p>
+        <p className="card-content">{trip.content}</p>
+        <p className="card-content">Tags:{trip.tag}</p>
         <p className="card-text" id="credit-info">
           Image by {trip.credit}
         </p>
