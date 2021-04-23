@@ -25,22 +25,27 @@ const ShowList = function ShowList(props) {
         setTrips(res.trips);
       }
     };
-    fetchTrips();
-  }, [props.searchKey, page]);
 
-  useEffect(() => {
+
     const fetchCount = async () => {
-      const resRaw = await fetch("./countData");
-      const _count = await resRaw.json();
-      setCount(_count);
+      const resRaw = await fetch(
+        `./countRecords?searchKey=${props.searchKey}`
+      );
+      const r = await resRaw.json();
+      if (r) {
+        setCount(r.a);
+      }
     };
+    fetchTrips();
     fetchCount();
-  }, []);
+
+
+  }, [props.searchKey, page]);
 
   return (
     <div>
       <h1>Find your favorite trips!</h1>
-      <label htmlFor="trip-select">Filter by tag:</label>
+      <label htmlFor="trips-select">Filter by tag:</label>
       {
         <select
           name="trips"
@@ -49,6 +54,7 @@ const ShowList = function ShowList(props) {
             setSelectedTrip(e.target.value);
           }}
         >
+
           <option value="all">All</option>
           {trips?.map((trip) => (
             <option key={trip} value={trip.tag}>
@@ -64,7 +70,7 @@ const ShowList = function ShowList(props) {
         <div className="block">
           <Pagination
             layout="prev, pager, next"
-            total={count.amount}
+            total={count}
             pageSize={6}
             onCurrentChange={(e) => setPage(e)}
           />
