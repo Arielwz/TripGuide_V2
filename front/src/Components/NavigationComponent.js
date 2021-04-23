@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import SearchComponent from "../Components/SearchComponent";
+import "./../styles/nav.css";
 
 const Nav = function NavigationComponent(props) {
   const location = useLocation();
@@ -11,7 +12,7 @@ const Nav = function NavigationComponent(props) {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link
-          className="navbar-brand"
+          className="navbar-brand nav-logo"
           aria-label="Homepage"
           to="/"
           onClick={async (ev) => {
