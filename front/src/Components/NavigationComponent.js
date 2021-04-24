@@ -62,7 +62,7 @@ const Nav = function NavigationComponent(props) {
                   "nav-link" +
                   (location.pathname === "/upload" ? " active" : "")
                 }
-                aria-label="Upload"
+                aria-label="upload"
                 aria-current="page"
                 to="/upload"
               >
@@ -74,7 +74,7 @@ const Nav = function NavigationComponent(props) {
               <Link
                 className="nav-link"
                 to="/saved"
-                aria-label="My Favourite"
+                aria-label="My Favourites"
                 aria-current="page"
               >
                 My Favourite
