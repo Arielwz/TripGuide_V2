@@ -41,12 +41,12 @@ const ShowList = function ShowList(props) {
     <div>
       <h1
         style={{
-          fontSize: "30px",
+          textAlign: "center",
           fontWeight: "bold",
-          margin: "15px 0 15px 0",
+          margin: "35px 0 20px 0",
         }}
       >
-        Find your favorite trips!
+        Find Your Favorite Trips!
       </h1>
       <label htmlFor="trip-select">Filter by tag:</label>
       {
