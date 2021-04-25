@@ -6,13 +6,13 @@ const SearchComponent = function SearchComponent(props) {
   const [searchKey, setSearchKey] = useState("");
 
   return (
-    <form className="d-flex" role ="search">
+    <form className="d-flex" role="search">
       <input
         className="form-control me-2"
         type="search"
         style={{ width: "220px" }}
-        placeholder="Search by title or location"
-        aria-label="input search text, by title or location"
+        placeholder="Search"
+        aria-label="input search text"
         onChange={(ev) => {
           setSearchKey(ev.target.value);
         }}
