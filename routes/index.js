@@ -94,6 +94,8 @@ router.get("/getTrips", async (req, res) => {
     $or: [
       { name: { $regex: searchKey, $options: "i" } },
       { location: { $regex: searchKey, $options: "i" } },
+      { content: { $regex: searchKey, $options: "i" } },
+      { tag: { $regex: searchKey, $options: "i" } },
     ],
   });
   res.send({ trips, success: true });
