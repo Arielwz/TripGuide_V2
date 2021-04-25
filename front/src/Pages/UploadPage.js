@@ -4,20 +4,26 @@ export default function UploadPage(props) {
   const [tripInfo, setTripInfo] = useState({});
   const [errorText, setErrorText] = useState("");
   return (
-    <div className="col-4">
+    <div className="upload">
       <br />
-      <header><h1 className="create-info" style={{fontSize: "40px"}}>Create a new Trip</h1></header>
-      {!!errorText && (
-        <div
-          id="error"
-          className="alert-danger"
-          role="alert"
-          style={{ marginBottom: "4px" }}
-        >
-          {errorText}
-        </div>
-      )}
-      <main>
+      <header className="col-md-12 col-sm-12">
+        <h1 className="create-info" style={{ fontSize: "40px" }}>
+          Create a new Trip
+        </h1>
+        <p style={{ fontSize: "20px", color: "#FF385C" }}> * If you haven't signed in yet, please sign in first to upload posts.</p>
+      </header>
+
+      <main className="col-6">
+        {!!errorText && (
+          <div
+            id="error"
+            className="alert-danger"
+            role="alert"
+            style={{ marginBottom: "4px" }}
+          >
+            {errorText}
+          </div>
+        )}
         <form
           id="formCreate"
           onSubmit={async (ev) => {
@@ -44,6 +50,7 @@ export default function UploadPage(props) {
             <input
               className="form-control"
               type="text"
+              size="45"
               aria-label="input title"
               onChange={(ev) => {
                 setTripInfo({
@@ -59,6 +66,7 @@ export default function UploadPage(props) {
             <input
               className="form-control"
               type="text"
+              size="45"
               aria-label="input location"
               onChange={(ev) => {
                 setTripInfo({
@@ -88,6 +96,7 @@ export default function UploadPage(props) {
             <input
               className="form-control"
               type="file"
+              style={{ fontSize: "22px"}}
               id="image-upload"
               aria-label="choose photo"
               onChange={(ev) => {
@@ -99,7 +108,7 @@ export default function UploadPage(props) {
             />
           </label>
           <br />
-          <button type="submit" className="btn btn-primary" aria-label="submit">
+          <button type="submit" className="btn btn-primary"  style={{ marginTop: "22px"}} aria-label="submit">
             Create
           </button>
         </form>

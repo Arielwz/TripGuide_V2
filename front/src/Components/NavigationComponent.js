@@ -77,7 +77,7 @@ const Nav = function NavigationComponent(props) {
                 aria-label="My Favourites"
                 aria-current="page"
               >
-                My Favourite
+                My Favourites
               </Link>
             </li>
           </ul>
