@@ -76,12 +76,27 @@ export default function UploadPage(props) {
             />
           </label>
           <label className="form-label">
+            Tag:
+            <input
+              className="form-control"
+              type="text"
+              size="45"
+              aria-label="input location"
+              onChange={(ev) => {
+                setTripInfo({
+                  ...tripInfo,
+                  tag: ev.target.value,
+                });
+              }}
+            />
+          </label>
+          <label className="form-label">
             Description:
             <br></br>
             <textarea
               rows="5"
               cols="50"
-              aria-label="input description"
+              aria-label="input tag"
               onChange={(ev) => {
                 setTripInfo({
                   ...tripInfo,
@@ -102,6 +117,21 @@ export default function UploadPage(props) {
                 setTripInfo({
                   ...tripInfo,
                   image: ev.target.files && ev.target.files[0],
+                });
+              }}
+            />
+          </label>
+          <label className="form-label">
+            Photo Source:
+            <input
+              className="form-control"
+              type="text"
+              size="45"
+              aria-label="input photo author"
+              onChange={(ev) => {
+                setTripInfo({
+                  ...tripInfo,
+                  credit: ev.target.value,
                 });
               }}
             />
