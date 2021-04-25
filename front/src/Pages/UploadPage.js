@@ -10,7 +10,6 @@ export default function UploadPage(props) {
         <h1 className="create-info" style={{ fontSize: "40px" }}>
           Create a new Trip
         </h1>
-        <p style={{ fontSize: "20px", color: "#FF385C" }}> * If you haven't signed in yet, please sign in first to upload posts.</p>
       </header>
 
       <main className="col-6">
