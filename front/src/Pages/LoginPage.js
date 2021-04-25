@@ -10,7 +10,8 @@ const LoginPage = function LoginPage(props) {
   return (
     <div className="/login">
       <header className="title">
-        <h1 style={{ fontSize: "40px" }}>Sign in to upload posts:</h1>
+        <h1 style={{ fontSize: "40px" }}>Please Sign In </h1>
+        <p>to upload posts and save your favourite posts</p>
       </header>
 
       <main className="row">
@@ -87,7 +88,11 @@ const LoginPage = function LoginPage(props) {
             )}
 
             <div className="d-grid gap-2 mx-auto center-font">
-              <button type="submit" className="btn btn-primary" aria-label="sign in">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                aria-label="sign in"
+              >
                 Sign In
               </button>
             </div>

@@ -1,12 +1,13 @@
 /* for login and regist pages */
 
 .title {
-  text-align: left;
+  text-align: center;
   margin-top: 10%;
 }
 
 .box {
-  margin-left: 20%;
+  position: relative;
+  margin-left: 33%;
   margin-top: 7%;
   margin-bottom: 7%;
   padding: 50px;
