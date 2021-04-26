@@ -13,8 +13,8 @@
 - Project Objective: Develop and deploy a Bay area trip guide web-app, allowing users to view and share trips.
 - Class Link: https://johnguerra.co/classes/webDevelopment_spring_2021/
 - Professor: John Alexis Guerra Gómez
-- Video Demo: https://youtu.be/YPjg3OCofuU
-- Slides: https://docs.google.com/presentation/d/1JPvYFGHcSF1Z2nPipKWzQfaeEQVSejnyMEAPoW812TU/edit#slide=id.p 
+- Video Demo: 
+- Slides: 
 
 ## 2. Technologies
 - React
