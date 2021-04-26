@@ -14,7 +14,7 @@ const LoginPage = function LoginPage(props) {
         <p>to upload posts and save your favourite posts</p>
       </header>
 
-      <main className="row">
+      <body className="row">
         <div className="col-sm-4 box border">
           <form
             id="formLogin"
@@ -109,7 +109,7 @@ const LoginPage = function LoginPage(props) {
             </Link>
           </div>
         </div>
-      </main>
+      </body>
     </div>
   );
 };

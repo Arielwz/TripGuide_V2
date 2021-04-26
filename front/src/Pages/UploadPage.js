@@ -12,7 +12,7 @@ export default function UploadPage(props) {
         </h1>
       </header>
 
-      <main className="col-6">
+      <body className="col-6">
         {!!errorText && (
           <div
             id="error"
@@ -162,7 +162,7 @@ export default function UploadPage(props) {
           </button>
           <div style={{ fontSize: "18px", marginTop:"20px"}}> Notice: please click on the last page to see your newly created post.</div>
         </form>
-      </main>
+      </body>
     </div>
   );
 }

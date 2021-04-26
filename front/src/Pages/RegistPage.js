@@ -10,7 +10,7 @@ export default function RegistPage(props) {
       <header className="title">
         <h1 style={{ fontSize: "40px" }}>Create New Account</h1>
       </header>
-      <main className="row">
+      <body className="row">
         <div className="col-sm-4 box border">
           <form
             id="formRegist"
@@ -102,7 +102,7 @@ export default function RegistPage(props) {
             </Link>
           </div>
         </div>
-      </main>
+      </body>
     </div>
   );
 }
