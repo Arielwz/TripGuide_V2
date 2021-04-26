@@ -26,6 +26,7 @@ col {
   font-weight: bold;
 }
 
-#credit-info {
+.card-text {
   font-size: 12px;
 }
+

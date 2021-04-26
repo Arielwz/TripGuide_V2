@@ -82,7 +82,7 @@ function MyDB() {
   };
 
   // count records
-  myDB.countData = async (query = {}) => {
+  myDB.countRecords = async (query = {}) => {
     let client;
     try {
       client = new MongoClient(url, { useUnifiedTopology: true });

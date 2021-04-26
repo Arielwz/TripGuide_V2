@@ -40,7 +40,7 @@ function App() {
           setSearchKey(key);
         }}
       ></NavigationComponent>
-      <div className="container full-width">
+      <div className="container">
         <Switch>
           <Route path="/login">
             <LoginPage

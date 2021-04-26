@@ -99,14 +99,15 @@ router.get("/getTrips", async (req, res) => {
     ],
   });
   res.send({ trips, success: true });
-});
+})
 
-router.get("/countData", async (req, res) => {
-  const searchKey = req.query.searchKey;
-  const tripCount = await myDB.countData(searchKey);
-  if (tripCount) {
-    res.send({ amount: tripCount });
-  }
-});
+
+router.get("/countRecords", async (req, res) => {
+    const searchKey = req.query.searchKey;
+    const a = await myDB.countRecords({
+      name: { $regex: searchKey, $options: "i" },
+    });
+    res.send({ a });
+  });
 
 module.exports = router;
