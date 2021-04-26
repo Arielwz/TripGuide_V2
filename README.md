@@ -1,5 +1,5 @@
 # BAY AREA TRIP GUIDE APP
-- Web app for sharing trips near bay area, link: https://trip-guide1.herokuapp.com/
+- Web app for sharing trips near bay area, link: https://trips-guide.herokuapp.com/#/
 - Author: Wenzhu Chen & Xiaoyan Qin
 
 # Project info Content
