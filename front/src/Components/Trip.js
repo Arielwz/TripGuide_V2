@@ -11,13 +11,13 @@ function add(t) {
 function Trip({ trip }) {
   return (
     <div className="container">
-      <div className="card" id="card-infom">
+      <div className="card">
         <img className="card-img-top" src={trip.img} alt="trip" />
         <p className="card-title">{trip.name}</p>
         <p>Location:{trip.location}</p>
         <p>{trip.content}</p>
         <p>Tags:{trip.tag}</p>
-        <p className="card-text" id="credit-info">
+        <p className="card-text">
           Image by {trip.credit}
         </p>
       </div>
