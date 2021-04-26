@@ -1,11 +1,10 @@
-body{
+body {
   font-size: 18px;
 }
 
 col {
   margin-left: 0;
   margin-right: 0;
-  
 }
 
 .card {
@@ -29,4 +28,3 @@ col {
 .card-text {
   font-size: 12px;
 }
-
