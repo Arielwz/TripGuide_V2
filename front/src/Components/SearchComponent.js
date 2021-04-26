@@ -10,8 +10,8 @@ const SearchComponent = function SearchComponent(props) {
       <input
         className="form-control me-2"
         type="search"
-        style={{ width: "220px" }}
-        placeholder="Search"
+        style={{ width: "220px", fontSize:"16px" }}
+        placeholder="Search by any keywords"
         aria-label="input search text"
         onChange={(ev) => {
           setSearchKey(ev.target.value);
