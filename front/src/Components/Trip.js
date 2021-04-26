@@ -11,7 +11,7 @@ function add(t) {
 function Trip({ trip }) {
   return (
     <div className="container">
-      <div className="card" id="card-info">
+      <div className="card" id="card-infom">
         <img className="card-img-top" src={trip.img} alt="trip" />
         <p className="card-title">{trip.name}</p>
         <p>Location:{trip.location}</p>
