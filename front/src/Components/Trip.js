@@ -4,8 +4,13 @@ const arr = [];
 
 function add(t) {
   arr.push(t);
-  localStorage.setItem("saveTrip", JSON.stringify(arr));
+  localStorage.setItem("saveTrip", JSON.stringify( unique(arr)));
   JSON.parse(localStorage.getItem("saveTrip"));
+}
+
+
+function unique(array) {
+  return [...new Set(array)]
 }
 
 function Trip({ trip }) {
