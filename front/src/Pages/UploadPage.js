@@ -129,7 +129,7 @@ export default function UploadPage(props) {
                 fontSize: "16px",
                 fontStyle: "italic",
                 color: "#6E6F70",
-                marginBottom:"10px"
+                marginBottom: "10px",
               }}
             >
               (Supported photo format: .jpeg, .jpg, .bmp, .png, .gif, etc.)
@@ -160,7 +160,11 @@ export default function UploadPage(props) {
           >
             Create
           </button>
-          <div style={{ fontSize: "18px", marginTop:"20px"}}> Notice: please click on the last page to see your newly created post.</div>
+          <div style={{ fontSize: "18px", marginTop: "20px" }}>
+            {" "}
+            Notice: please click on the last page to see your newly created
+            post.
+          </div>
         </form>
       </body>
     </div>

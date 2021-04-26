@@ -4,13 +4,12 @@ const arr = [];
 
 function add(t) {
   arr.push(t);
-  localStorage.setItem("saveTrip", JSON.stringify( unique(arr)));
+  localStorage.setItem("saveTrip", JSON.stringify(unique(arr)));
   JSON.parse(localStorage.getItem("saveTrip"));
 }
 
-
 function unique(array) {
-  return [...new Set(array)]
+  return [...new Set(array)];
 }
 
 function Trip({ trip }) {
@@ -22,9 +21,7 @@ function Trip({ trip }) {
         <p className="card-content">Location: {trip.location}</p>
         <p className="card-content">{trip.content}</p>
         <p className="card-content">Tags:{trip.tag}</p>
-        <p className="card-text" id="credit-info">
-          Image by {trip.credit}
-        </p>
+        <p className="card-text">Image by {trip.credit}</p>
       </div>
       <button className="btn btn-primary" onClick={() => add(trip)}>
         save

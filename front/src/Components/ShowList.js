@@ -26,11 +26,8 @@ const ShowList = function ShowList(props) {
       }
     };
 
-
     const fetchCount = async () => {
-      const resRaw = await fetch(
-        `./countRecords?searchKey=${props.searchKey}`
-      );
+      const resRaw = await fetch(`./countRecords?searchKey=${props.searchKey}`);
       const r = await resRaw.json();
       if (r) {
         setCount(r.a);
@@ -38,8 +35,6 @@ const ShowList = function ShowList(props) {
     };
     fetchTrips();
     fetchCount();
-
-
   }, [props.searchKey, page]);
 
   return (
@@ -53,16 +48,17 @@ const ShowList = function ShowList(props) {
       >
         Find Your Favorite Trips!
       </h1>
+
       <label htmlFor="trip-select">Filter by tag:</label>
       {
         <select
           name="trips"
           id="trips-select"
+          aria-label="filter by tag"
           onChange={(e) => {
             setSelectedTrip(e.target.value);
           }}
         >
-
           <option value="all">All</option>
           {trips?.map((trip) => (
             <option key={trip} value={trip.tag}>
