@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import SearchComponent from "../Components/SearchComponent";
+import "./../styles/nav.css";
 
 const Nav = function NavigationComponent(props) {
   const location = useLocation();
@@ -11,7 +12,7 @@ const Nav = function NavigationComponent(props) {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link
-          className="navbar-brand"
+          className="navbar-brand nav-logo"
           aria-label="Homepage"
           to="/"
           onClick={async (ev) => {
@@ -61,7 +62,7 @@ const Nav = function NavigationComponent(props) {
                   "nav-link" +
                   (location.pathname === "/upload" ? " active" : "")
                 }
-                aria-label="Upload"
+                aria-label="upload"
                 aria-current="page"
                 to="/upload"
               >
@@ -73,10 +74,10 @@ const Nav = function NavigationComponent(props) {
               <Link
                 className="nav-link"
                 to="/saved"
-                aria-label="My Favourite"
+                aria-label="My Favourites"
                 aria-current="page"
               >
-                My Favourite
+                My Favourites
               </Link>
             </li>
           </ul>

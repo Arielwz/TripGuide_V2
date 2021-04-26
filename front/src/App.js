@@ -50,8 +50,26 @@ function App() {
             />
           </Route>
           <Route path="/regist" component={RegistPage} />
-          <Route path="/upload" component={UploadPage} />
-          <Route path="/saved" component={ShowSaved} />
+          <Route
+            path="/upload"
+            component={(props) => {
+              if (!hasLogin) {
+                props.history.replace("/login");
+                return null;
+              }
+              return <UploadPage {...props} />;
+            }}
+          />
+          <Route
+            path="/saved"
+            component={(props) => {
+              if (!hasLogin) {
+                props.history.replace("/login");
+                return null;
+              }
+              return <ShowSaved {...props} />;
+            }}
+          />
           <Route path="/">
             <HomePage searchKey={searchKey} />
           </Route>

@@ -4,20 +4,25 @@ export default function UploadPage(props) {
   const [tripInfo, setTripInfo] = useState({});
   const [errorText, setErrorText] = useState("");
   return (
-    <div className="col-4">
+    <div className="upload">
       <br />
-      <header><h1 className="create-info" style={{fontSize: "40px"}}>Create a new Trip</h1></header>
-      {!!errorText && (
-        <div
-          id="error"
-          className="alert-danger"
-          role="alert"
-          style={{ marginBottom: "4px" }}
-        >
-          {errorText}
-        </div>
-      )}
-      <main>
+      <header className="col-md-12 col-sm-12">
+        <h1 className="create-info" style={{ fontSize: "40px" }}>
+          Create a new Trip
+        </h1>
+      </header>
+
+      <main className="col-6">
+        {!!errorText && (
+          <div
+            id="error"
+            className="alert-danger"
+            role="alert"
+            style={{ marginBottom: "4px" }}
+          >
+            {errorText}
+          </div>
+        )}
         <form
           id="formCreate"
           onSubmit={async (ev) => {
@@ -44,6 +49,8 @@ export default function UploadPage(props) {
             <input
               className="form-control"
               type="text"
+              size="45"
+              placeholder="The name of the place"
               aria-label="input title"
               onChange={(ev) => {
                 setTripInfo({
@@ -59,6 +66,8 @@ export default function UploadPage(props) {
             <input
               className="form-control"
               type="text"
+              size="45"
+              placeholder="The address of the place"
               aria-label="input location"
               onChange={(ev) => {
                 setTripInfo({
@@ -69,12 +78,29 @@ export default function UploadPage(props) {
             />
           </label>
           <label className="form-label">
+            Tag:
+            <input
+              className="form-control"
+              type="text"
+              size="45"
+              placeholder="e.g. trail, mountain, park, flower, etc"
+              aria-label="input location"
+              onChange={(ev) => {
+                setTripInfo({
+                  ...tripInfo,
+                  tag: ev.target.value,
+                });
+              }}
+            />
+          </label>
+          <label className="form-label">
             Description:
             <br></br>
             <textarea
               rows="5"
               cols="50"
-              aria-label="input description"
+              placeholder="Description of the trip"
+              aria-label="input tag"
               onChange={(ev) => {
                 setTripInfo({
                   ...tripInfo,
@@ -83,11 +109,12 @@ export default function UploadPage(props) {
               }}
             ></textarea>
           </label>
-          <label className="form-label">
+          <label className="form-label" style={{ marginTop: "5px" }}>
             Photo:{" "}
             <input
               className="form-control"
               type="file"
+              style={{ fontSize: "22px" }}
               id="image-upload"
               aria-label="choose photo"
               onChange={(ev) => {
@@ -97,11 +124,43 @@ export default function UploadPage(props) {
                 });
               }}
             />
+            <div
+              style={{
+                fontSize: "16px",
+                fontStyle: "italic",
+                color: "#6E6F70",
+                marginBottom:"10px"
+              }}
+            >
+              (Supported photo format: .jpeg, .jpg, .bmp, .png, .gif, etc.)
+            </div>
+          </label>
+          <label className="form-label">
+            Photo Source:
+            <input
+              className="form-control"
+              type="text"
+              size="45"
+              placeholder="The author or the source link of the photo"
+              aria-label="input photo author"
+              onChange={(ev) => {
+                setTripInfo({
+                  ...tripInfo,
+                  credit: ev.target.value,
+                });
+              }}
+            />
           </label>
           <br />
-          <button type="submit" className="btn btn-primary" aria-label="submit">
+          <button
+            type="submit"
+            className="btn btn-primary"
+            style={{ marginTop: "22px" }}
+            aria-label="submit"
+          >
             Create
           </button>
+          <div style={{ fontSize: "18px", marginTop:"20px"}}> Notice: please click on the last page to see your newly created post.</div>
         </form>
       </main>
     </div>

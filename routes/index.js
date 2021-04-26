@@ -91,7 +91,12 @@ router.get("/getTrips", async (req, res) => {
   const searchKey = req.query.searchKey;
   const page = +req.query.page || 0;
   const trips = await myDB.getTrips(page, {
-    name: { $regex: searchKey, $options: "i" },
+    $or: [
+      { name: { $regex: searchKey, $options: "i" } },
+      { location: { $regex: searchKey, $options: "i" } },
+      { content: { $regex: searchKey, $options: "i" } },
+      { tag: { $regex: searchKey, $options: "i" } },
+    ],
   });
   res.send({ trips, success: true });
 })
