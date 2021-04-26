@@ -109,7 +109,7 @@ export default function UploadPage(props) {
               }}
             ></textarea>
           </label>
-          <label className="form-label">
+          <label className="form-label" style={{ marginTop: "5px" }}>
             Photo:{" "}
             <input
               className="form-control"
@@ -128,7 +128,8 @@ export default function UploadPage(props) {
               style={{
                 fontSize: "16px",
                 fontStyle: "italic",
-                color: "#929496",
+                color: "#6E6F70",
+                marginBottom:"10px"
               }}
             >
               (Supported photo format: .jpeg, .jpg, .bmp, .png, .gif, etc.)
@@ -159,6 +160,7 @@ export default function UploadPage(props) {
           >
             Create
           </button>
+          <div style={{ fontSize: "18px", marginTop:"20px"}}> Notice: please click on the last page to see your newly created post.</div>
         </form>
       </main>
     </div>
