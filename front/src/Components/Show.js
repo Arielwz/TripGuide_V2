@@ -11,7 +11,7 @@ function Show(props) {
             <Trip trip={props.selectedTripObj} key={props.trip} />
           ) : (
             props.trips.map((t) => (
-              <div className="card-deck">
+              <div className="card-deck" id={t.id}>
                 <div className="card-body">
                   <Trip key={t.id} trip={t} />
                 </div>
