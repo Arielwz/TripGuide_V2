@@ -9,7 +9,7 @@
 4. Website at a Glance
 
 ## 1.Project basic information
-- CS 5610 Project 3
+- CS 5610 Project 4 - final project
 - Project Objective: Develop and deploy a Bay area trip guide web-app, allowing users to view and share trips.
 - Class Link: https://johnguerra.co/classes/webDevelopment_spring_2021/
 - Professor: John Alexis Guerra Gómez
