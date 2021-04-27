@@ -47,3 +47,4 @@
    <br> Then start the frontend server, run `cd front`, `yarn start` and visit http://localhost:3000
 
 ## 4. Website At a Glance
+<img width="80%" alt="homepage" src="https://user-images.githubusercontent.com/51281099/116193973-09f98080-a6e5-11eb-9b00-827a2092bc4b.png">
