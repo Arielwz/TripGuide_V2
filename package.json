@@ -11,8 +11,6 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
-    "element-react": "^1.4.34",
-    "element-theme-default": "^1.4.13",
     "express": "~4.16.1",
     "express-fileupload": "^1.2.1",
     "express-session": "^1.17.1",
