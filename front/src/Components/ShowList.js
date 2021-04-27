@@ -37,6 +37,7 @@ const ShowList = function ShowList(props) {
     fetchCount();
   }, [props.searchKey, page]);
 
+  const tags=["wine","skiing","flower","trail"];
   return (
     <div>
       <h1
@@ -60,9 +61,9 @@ const ShowList = function ShowList(props) {
           }}
         >
           <option value="all">All</option>
-          {trips?.map((trip) => (
-            <option key={trip} value={trip.tag}>
-              {trip.tag}
+          {tags?.map((tag) => (
+            <option key={tag} value={tag}>
+              {tag}
             </option>
           ))}
         </select>
