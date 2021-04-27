@@ -1,7 +1,7 @@
 import Show from "./Show";
 import { useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
-import PaginationComponent from "./PaginationComponent"
+import PaginationComponent from "./PaginationComponent";
 import "element-theme-default";
 
 const ShowList = function ShowList(props) {
@@ -37,7 +37,7 @@ const ShowList = function ShowList(props) {
     fetchCount();
   }, [props.searchKey, page]);
 
-  const tags=["wine","skiing","flower","trail"];
+  const tags = ["wine", "skiing", "flower", "trail"];
   return (
     <div>
       <h1
@@ -72,7 +72,7 @@ const ShowList = function ShowList(props) {
       <Show trips={trips} selectedTripObj={selectedTripObj} />
 
       <div className="first">
-        <div className="block">  
+        <div className="block">
           <PaginationComponent
             total={count}
             page={page}

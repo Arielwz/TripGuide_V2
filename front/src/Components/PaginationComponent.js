@@ -1,13 +1,13 @@
 export default function PaginationComponent({ page, onChangePage, total }) {
   let numPages = 6;
   let minPageInRange = Math.max(0, page - numPages / 2);
-  let lastPage = Math.floor(total / 6)+1;
+  let lastPage = Math.floor(total / 6) + 1;
   let maxPageInRange = Math.min(minPageInRange + numPages, lastPage);
 
   const renderPages = () => {
     let pages = [];
 
-    for (let i = minPageInRange+2; i <= maxPageInRange; i += 1) {
+    for (let i = minPageInRange + 2; i <= maxPageInRange; i += 1) {
       pages.push(
         <li
           key={"page" + i}
