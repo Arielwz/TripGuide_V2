@@ -10,7 +10,7 @@
 
 ## 1.Project basic information
 - CS 5610 Project 4 - final project
-- Project Objective: Develop and deploy a Bay area trip guide web-app, allowing users to view and share trips.
+- Project Objective: Iterating and improving the previous website with design,function, accessibility and usability.
 - Class Link: https://johnguerra.co/classes/webDevelopment_spring_2021/
 - Professor: John Alexis Guerra Gómez
 - Video Demo: 
@@ -25,6 +25,7 @@
 - MongoDB
 - dotenv
 - ESLint
+- Axe
 
 ## 3. Setup instructions
 - Clone the repo
