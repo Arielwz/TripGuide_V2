@@ -13,8 +13,8 @@
 - Project Objective: Iterating and improving the previous website with design,function, accessibility and usability.
 - Class Link: https://johnguerra.co/classes/webDevelopment_spring_2021/
 - Professor: John Alexis Guerra Gómez
-- Video Demo: 
-- Slides: 
+- Video Demo: https://youtu.be/Y2rn7OqilUg
+- Slides: https://docs.google.com/presentation/d/1FHxtSmYU6CQIUl2KAt9uW6v3XQxaJ8GtA9R-jc05VXk/edit?usp=sharing
 
 ## 2. Technologies
 - React
